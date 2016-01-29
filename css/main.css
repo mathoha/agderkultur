@@ -1,0 +1,185 @@
+/*----- Skeleton framework -----*/
+
+.scrollshow { 
+    object-fit: contain;
+    max-width: 200px;
+    
+    
+        
+}
+
+
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 100px;
+  z-index: 9999;
+ 
+  height: match;
+  background-color: whitesmoke;
+  box-shadow:1px 2px 2px rgba(0,0,0,0.2);
+}   
+
+/*--------------------------- Dropdown menu ----------------------------*/
+.clearfix:after {
+    display:block;
+    clear:both;
+}
+
+
+
+.menu-wrap {
+    width:100%;
+   
+}
+.menu {
+    width:1000px;
+    margin:0px auto;
+}
+ 
+.menu li {
+    margin:0px;
+    list-style:none;
+    
+}
+ 
+.menu a {
+    transition:all linear 0.15s;
+    color:black;
+    text-decoration: none
+}
+ 
+.menu li:hover > a, .menu .current-item > a {
+    text-decoration:none;
+    color:darkred;
+}
+
+
+/*----- Top Level -----*/
+.menu > ul > li {
+    float:center;
+    display:inline-block;
+    position:relative;
+    font-size:25px;
+    text-transform: uppercase;
+    font-weight:lighter;
+    
+            
+}
+ 
+.menu > ul > li > a {
+    padding:0px 30px;
+    padding-top: 20px;
+    display:inline-block;
+    text-shadow:0px 2px 2px rgba(0,0,0,0.1);
+}
+ 
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+    background: whitesmoke;
+}
+
+/*----- Bottom Level -----*/
+.sub-menu {
+    width:100%;
+    padding:0px 0px;
+    position:absolute;
+    top:86%;
+    z-index:-1;
+    opacity:0;
+    transition:opacity linear 0.1s;
+    box-shadow:0 0 5px rgba(0,0,0,0.5);
+    background:whitesmoke;
+    
+}
+
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity:1;
+}
+
+.sub-menu li {
+    display:block;
+    font-size:0.7em;
+}
+ 
+.sub-menu li a {
+    padding:15px 8px;
+    display:block;
+    text-transform: capitalize;
+}
+ 
+.sub-menu li a:hover, .sub-menu .current-item a {
+    background: peach;
+}
+
+
+#banner {
+  min-width: 320px;    
+}
+
+    
+
+#fixed-footer {
+    height: match;
+    background-color: whitesmoke;
+    margin-top: 150px;
+    box-shadow:0 0 10px rgba(0,0,0,0.8);
+         
+}
+
+
+#footer-contact {
+    text-align: center;
+    padding: 25px;
+    font-size: 18px;
+    
+    
+}
+
+
+
+.fb-like {
+    position:relative;
+    top:-130px;
+    padding: 20px
+    
+        
+}
+
+.translate-bar {
+  position: relative;
+  top: 250px;
+  left: 600px;
+  right: 0;
+    bottom: 0;
+   width: 100%;     
+  
+  z-index: 1;
+  height: match;
+  background-color: transparent;
+  
+}
+
+
+
+.sub-paragraph {
+    font-style: italic;
+    
+    padding-left: 10%;
+}
+
+.sub-heading {
+    display: block;
+    position: relative;
+    top: -200px;
+    margin-top: 50px;
+    
+}
+
+.larger-paragraph {
+    font-size: 1.9rem;
+}
+
+
