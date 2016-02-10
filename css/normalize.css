@@ -33,11 +33,11 @@ body {
 article,
 aside,
 details,
-figcaption,
-figure,
 footer,
 header,
 hgroup,
+figure,
+figcaption,
 main,
 menu,
 nav,
@@ -204,7 +204,7 @@ svg:not(:root) {
  */
 
 figure {
-  margin: 1em 40px;
+  margin: auto
 }
 
 /**
