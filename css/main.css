@@ -114,13 +114,15 @@
 }
 
 
+
+
 #banner {   
     min-width: 320px;
     max-height: 65px;
     
 }
 
-    
+/*--------------------------- footer custom css ----------------------------*/    
 
 #fixed-footer {
     height: match;
@@ -135,12 +137,13 @@
     text-align: center;
     padding: 25px;
     font-size: 18px;
+    background: white;
     
     
 }
 
 
-
+/*--------------------------- Facebook ----------------------------*/
 .fb-like {
     position:relative;
     top:-130px;
@@ -164,7 +167,7 @@
 }
 
 
-
+/*--------------------------- text design ----------------------------*/
 .sub-paragraph {
     font-style: italic;
     
@@ -196,30 +199,8 @@
     width: 100%;
     height: 100%;
 }
-
-}
-#frontpage-tiles {
-    margin-top: 1000px;
-}
-
-
-#tiles {
-    margin-top: 100px
-}
-
-.church-section {
-    background-image: url(/images/froland-kirke.jpg);
-    
     
             
-}
-
-#centerimage {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 16px;
-}
 
 figcaption {
     text-align: center;
@@ -233,4 +214,16 @@ figcaption {
 .margin-paragraph {
     margin-left: 36px;
     margin-right: 36px;
+}
+
+
+
+
+.u-max-full-width-center {
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
 }

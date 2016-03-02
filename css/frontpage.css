@@ -1,0 +1,540 @@
+/*---------------------------------Side menu--------------------*/
+
+body {
+    color: #777;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    padding-left: 0;
+}
+    #layout.active #menu {
+        left: 320px;
+        width: 320px;
+    }
+
+    #layout.active .menu-link {
+        left: 320px;
+    }
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: auto;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+}
+
+.header {
+     margin: 0;
+     color: #333;
+    box-shadow:1px 2px 2px rgba(0,0,0,0.3);
+     text-align: center;
+     padding: 1em 1em;
+     
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 100;
+        color: #ccc;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        font-style: italic
+    }
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+}
+
+
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+    margin-left: -320px; /* "#menu" width */
+    width: 320px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10000; /* so the menu or its navicon stays above all content */
+    background-color: white;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: none;
+    }
+
+.hidescroll::-webkit-scrollbar {
+display: none;
+}
+
+    /*
+    All anchors inside the menu should be styled like this.
+    */
+    #menu a {
+        color: #999;
+        border: none;
+        padding: 0.6em 0 0.6em 0.6em;
+    }
+
+    /*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+     #menu .pure-menu,
+     #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    /*
+    Add that light border to separate items into groups.
+    */
+    #menu .pure-menu ul,
+    #menu .pure-menu .menu-item-divided {
+        border-top: 1px solid #333;
+    }
+        /*
+        Change color of the anchor links on hover/focus.
+        */
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+            background: #333;
+        }
+
+    /*
+    This styles the selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected,
+    #menu .pure-menu-heading {
+        background: #1f8dd6;
+    }
+        /*
+        This styles a link within a selected menu item `<li>`.
+        */
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+    /*
+    This styles the menu heading.
+    */
+    #menu .pure-menu-heading {
+        font-size: 110%;
+        color: #fff;
+        margin: 0;
+    }
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    position: fixed;
+    display: block; /* show this only on small screens */
+    top: 0;
+    left: 0; /* "#menu width" */
+    background: transparent;
+    background: rgb(255,0,0,0);
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 1000000;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+    .menu-link:hover,
+    .menu-link:focus {
+        background: white;
+    }
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: black;
+        width: 100%;
+        height: 0.2em;
+    }
+
+        .menu-link span:before,
+        .menu-link span:after {
+            position: absolute;
+            margin-top: -0.6em;
+            content: " ";
+        }
+
+        .menu-link span:after {
+            margin-top: 0.6em;
+        }
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    #layout {
+        padding-left: 320px; /* left col width "#menu" */
+        left: 0;
+    }
+    #menu {
+        left: 320px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 320px;
+        display: none;
+    }
+
+    #layout.active .menu-link {
+        left: 320px;
+    }
+}
+
+@media (max-width: 48em) {
+    /* Only apply this when the window is small. Otherwise, the following
+    case results in extra padding on the left:
+        * Make the window small.
+        * Tap the menu to trigger the active state.
+        * Make the window large again.
+    */
+    #layout.active {
+        position: relative;
+        left: 320px;
+    }
+}
+
+
+
+
+/* -------------------------------sidemenu -------------------------------------*/ 
+
+.sidebar-text{
+    width: 320px;
+    height: 187px;
+    color: white;
+    font-size: 3.3rem;
+    text-align: center;
+    display: table-cell;
+    vertical-align: bottom;
+    padding-left: 3px;
+    padding-right: 3px;
+    
+}
+
+.kirke-menu {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.9)
+        ),url('../images/fjare-kirke-black.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.kirke-menu-active {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.9)
+        ),url('../images/fjare-kirke.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+.kirke-menu:hover {
+   background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9)
+    ), url('../images/fjare-kirke.jpg');
+
+}
+
+.kunst-menu {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ), 
+        url('../images/bildeteppe-black.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.kunst-menu-active {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ), 
+        url('../images/bildeteppe.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.kunst-menu:hover {
+   background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+       url('../images/bildeteppe.jpg');
+    
+
+}
+
+.uia-menu {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/uia-black.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.uia-menu-active {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/uia.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.uia-menu:hover {
+   background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+       url('../images/uia.jpg');
+    
+
+}
+.industri-menu {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/nikkelverket-black.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+
+.industri-menu-active {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/nikkelverket.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.industri-menu:hover {
+   background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+       url('../images/nikkelverket.jpg');
+    
+
+}
+.sjofart-menu {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/sorlandet-black.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.sjofart-menu-active {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/sorlandet.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.sjofart-menu:hover {
+   background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+       url('../images/sorlandet.jpg');
+    
+
+}
+
+.museer-menu {
+     width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/museum-black.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.museer-menu-active {
+     width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/museum.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.museer-menu:hover {
+   background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+       url('../images/museum.jpg');
+    text-decoration: none;
+    
+
+}
+
+#grid-tiles {
+    
+    padding: 0.1%;
+    margin-top: 2%;
+   text-align: center;
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
+
+
+
+#grid-row {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.content-tiles {
+    text-decoration: none;
+    color: grey;
+    font-size: 18px;
+    padding: 0;
+    
+}
+
+#site-description {
+    text-align: center;
+    padding-top: 30px;
+}
