@@ -538,3 +538,18 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     text-align: center;
     padding-top: 30px;
 }
+
+.frontpage-footer {
+    height: match;
+    background-color: whitesmoke;
+    margin-top: 250px;
+    box-shadow:0 0 10px rgba(0,0,0,0.8);
+}
+
+#frontpage-footer {
+     margin: 0;
+     color: #333;
+     box-shadow:2px 2px 1px rgba(0,0,0,0.3);
+     text-align: center;
+     padding: 1em 1em;
+}
