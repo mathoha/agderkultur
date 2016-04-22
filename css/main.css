@@ -201,11 +201,8 @@
 }
     
             
-
-figcaption {
+.center-text {
     text-align: center;
-    font-weight: bold;
-    font-size: 1.8rem
 }
 
 
