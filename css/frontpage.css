@@ -353,6 +353,43 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
 }
 
+.byer-menu {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/kristiansand-black.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.byer-menu-active {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+        url('../images/kristiansand.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.byer-menu:hover {
+   background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+       url('../images/kristiansand.jpg');
+}
+
 .uia-menu {
     width: 320px;
     height: 187px;
@@ -541,7 +578,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
 .frontpage-footer {
     height: match;
-    background-color: whitesmoke;
+    background-color: ;
     margin-top: 250px;
     box-shadow:0 0 10px rgba(0,0,0,0.8);
 }
