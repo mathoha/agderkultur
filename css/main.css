@@ -235,3 +235,9 @@
 }
 
 
+
+.image-header {
+    text-align: center;
+    font-size: 2rem;
+    padding: 24px;
+}
