@@ -571,10 +571,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     
 }
 
-#site-description {
-    text-align: center;
-    padding-top: 30px;
-}
+/* -------------------------------frontpage -------------------------------------*/ 
 
 .frontpage-footer {
     height: match;
