@@ -268,7 +268,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     width: 320px;
     height: 187px;
     color: white;
-    font-size: 3.3rem;
+    font-size: 3.2rem;
     text-align: center;
     display: table-cell;
     vertical-align: bottom;
@@ -349,6 +349,45 @@ Hides the menu at `48em`, but modify this based on your app's needs.
       rgba(0, 0, 0, 0.0),
       rgba(0, 0, 0, 0.9) ),
        url('../images/bildeteppe.jpg');
+    
+
+}
+
+.kultur-menu {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ), 
+        url('../images/sabeltann-black1.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.kultur-menu-active {
+    width: 320px;
+    height: 187px;
+    display: block;
+    background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ), 
+        url('../images/sabeltann1.jpg');
+    font-size: 0;
+    text-decoration: none;
+}
+
+.kultur-menu:hover {
+   background-image:linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.9) ),
+       url('../images/sabeltann1.jpg');
     
 
 }
@@ -573,6 +612,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
 /* -------------------------------frontpage -------------------------------------*/ 
 
+
+ 
 .frontpage-footer {
     height: match;
     background-color: ;
@@ -586,4 +627,48 @@ Hides the menu at `48em`, but modify this based on your app's needs.
      box-shadow:2px 2px 1px rgba(0,0,0,0.3);
      text-align: center;
      padding: 1em 1em;
+}
+
+#frontpage-highlights {
+    padding: 2%;
+    margin-top: 4%;
+    -moz-box-shadow:     0 0 10px #000000;
+    -webkit-box-shadow:  0 0 10px #000000;
+    box-shadow:          0 0 10px #000000;
+}
+
+#frontpage-authorframe {
+    padding: %;
+    margin-bottom: 5%;
+    -moz-box-shadow:     0 0 10px #000000;
+    -webkit-box-shadow:  0 0 10px #000000;
+    box-shadow:          0 0 5px #000000;
+}
+
+#frontpage-box {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1.5%;
+   text-align: center;
+   -moz-box-shadow:     0 0 10px #000000;
+   -webkit-box-shadow:  0 0 10px #000000;
+   box-shadow:          0 0 10px #000000;
+}
+
+#hidden-link {
+    color: black;
+    text-decoration: none;
+    padding-left: 2%;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li:before{
+    content: "\00BB" " ";
+    font-size: 200%;
+    color: darkred  ;
 }
