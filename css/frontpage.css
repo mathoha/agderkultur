@@ -616,7 +616,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
  
 .frontpage-footer {
     height: match;
-    background-color: ;
+    background-color: whitesmoke ;
     margin-top: 250px;
     box-shadow:0 0 10px rgba(0,0,0,0.8);
 }
