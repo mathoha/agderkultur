@@ -629,7 +629,17 @@ Hides the menu at `48em`, but modify this based on your app's needs.
      padding: 1em 1em;
 }
 
-#frontpage-highlights {
+#frontpage-program {
+    padding: 2%;
+    margin-top: 4%;
+    -moz-box-shadow:     0 0 10px #000000;
+    -webkit-box-shadow:  0 0 10px #000000;
+    box-shadow:          0 0 10px #000000;
+    max-height: 788px;
+    overflow-y: scroll
+}
+
+#frontpage-element {
     padding: 2%;
     margin-top: 4%;
     -moz-box-shadow:     0 0 10px #000000;
@@ -638,7 +648,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 }
 
 #frontpage-authorframe {
-    padding: %;
+    padding: 0%;
     margin-bottom: 5%;
     -moz-box-shadow:     0 0 10px #000000;
     -webkit-box-shadow:  0 0 10px #000000;
